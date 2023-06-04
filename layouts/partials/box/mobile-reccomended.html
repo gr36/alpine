@@ -1,0 +1,14 @@
+{{ $related := first 20 .Site.Taxonomies.categories.essay }}
+{{ $related := shuffle $related }} 
+
+<div class="mobile">
+   <div class="micro-callout box">
+        <h2>You might also like</h2>
+        <div class="mobile-microposts">
+            {{ range first 2 $related }}
+                <div class="mobile-micropost">
+                    {{ partial "summery.html" . }}
+                </div>
+            {{ end }}
+        </div>
+</div>

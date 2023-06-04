@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+
+<div class="posts-wrapper">
+	<div class="post-list">
+	
+            <h1 class="aya">Greg Thinks Things Newsletter</h1>
+
+{{ partial "box/signup.html" . }}
+			{{ with .Site.Taxonomies.categories.newsletter }}
+			{{ range first 5 . }}
+				{{ partial "post-item.html" . }}
+			{{ end }}
+		{{ end }}
+
+<a href="/categories/newsletter/">View all editions</a>
+
+	</div>
+
+	<div class="sidebar">
+		{{ partial "box/advert.html" . }}
+		{{ partial "box/coffee.html" . }}
+ {{ partial "box/categories.html" . }}
+    {{ partial "box/reading.html" . }}
+		
+	</div>
+</div>
+
+
+{{ end }}

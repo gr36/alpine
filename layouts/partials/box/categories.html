@@ -1,0 +1,6 @@
+<div class="categories box">
+    <h2>Categories</h2>
+    {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+        <div><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+    {{ end }}
+</div>

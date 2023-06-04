@@ -1,0 +1,10 @@
+<div class="reading box">
+    <a href="/reading/"><h2>Reading</h2></a>
+    {{ range first 1 (.Site.Data.bookshelves.currentlyreading) }}
+        <a href="https://micro.blog/books/{{ .isbn }}">
+    <div class="bookmeta">
+    <img src="{{ .cover_url }}"> <span class="bookshelf_title">{{ .title }}</span>
+    <span class="book-author">by {{ .author }}</span></a>
+    </div> 
+    {{ end }}
+</div>

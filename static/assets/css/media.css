@@ -1,0 +1,114 @@
+/* Media Queries */
+@media screen and (max-width: 540px) {
+
+	footer #wrapper {
+		padding: 35px 0 60px 0;
+	}
+
+	.profile #wrapper {
+		margin: 0 auto;
+		text-align: center;
+		padding: 70px 0 40px 0;
+	}
+
+	#post-meta {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-top: 60px;
+	}
+
+	.post {
+		margin: 50px 0;
+	}
+
+	h1 {
+		font-size: 24px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
+	h3 {
+		font-size: 19px;
+	}
+
+}
+
+@media only screen and (max-width: 750px) {
+
+ 
+  
+  }
+  
+
+@media screen and (max-width: 600px) {
+	.sidebar {
+		display: none;
+	}
+.posts-wrapper {
+display: block;
+}
+.site-title {
+		display: block;
+		text-align: center;
+	}
+
+	.mobile {
+		display: block;
+	}
+	.ne-mobile {
+		display: none;
+	}
+
+	.micro-callout {
+		display: flex;
+		flex-direction: column;
+		background: var(--callout);
+		margin-bottom: 50px;
+	}
+
+	.mobile-microposts {
+		display:flex;
+		flex-direction: row;
+		gap: 10px
+	}
+
+	.mobile-micropost {
+		flex: 40%;
+	}
+
+	.recomended {
+		background-color: var(--callout);
+		margin-top: 50px;
+	}
+
+	.recomended-posts {
+		flex-direction: row;
+		gap: 20px;
+	}
+
+	.main-nav {
+		text-align: center;
+	}
+
+	.site-menus {
+		float: none;
+		text-align: center;
+	}
+
+}
+
+@media screen and (max-width: 320px) {
+	.mobile-callout {
+		display: none;
+	}
+}	
+
+
+@media screen and (max-width: 420px) {
+.mobile-microposts {
+display: block;
+}
+
+}

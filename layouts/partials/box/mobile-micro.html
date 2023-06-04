@@ -1,0 +1,15 @@
+<div class="mobile">
+    <div class="micro-callout box">
+         <a href="/categories/micro/"><h2>Micro Blog</h2></a>
+        <div class="mobile-microposts">
+            {{ range first 2 .Site.Taxonomies.categories.micro.Pages | complement .Site.Taxonomies.categories.photo.Pages }}
+                <div class="mobile-micropost">
+                    {{ partial "post-item.html" . }}
+                </div>
+            {{ end }}
+        </div>
+    </div>
+
+
+    <span class="separator"><span class="divider"></span></span>
+</div>

@@ -1,0 +1,14 @@
+{{ $microposts := .Site.Taxonomies.categories.micro }}
+
+<div class="micropost box">
+    <a href="/categories/micro/"><h2>Micro Blog</h2></a>
+    {{ if or .IsHome .Site.Params.paginate_categories }}
+        {{ range first 3 $microposts }}
+            {{ partial "post-item.html" . }}
+        {{ end }}
+    {{ else }}
+    {{ range $microposts }}
+            {{ partial "post-item.html" . }}
+        {{ end }}
+    {{ end }}
+</div>

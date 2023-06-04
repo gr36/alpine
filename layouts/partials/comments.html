@@ -1,0 +1,16 @@
+<div class="comments"> 
+{{ if .Site.Params.include_conversation }}
+<h2 style="color: var(--ghost-accent-color);" >Comments</h2>
+💬 Webmention or feel free to {{ partial "reply-by-email.html" . }}
+
+  <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+
+
+<div class="join_conversation box">
+{{ partial "conversation-link.html" . }}
+</div>
+
+
+  {{ end }}
+
+</div>

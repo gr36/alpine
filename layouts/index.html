@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{ $paginator := .Paginate (.Site.Taxonomies.categories.essay) 5 }}
+
+
+<div class="posts-wrapper">
+	<div class="post-list">
+	<h2>Blog Posts</h2>
+	{{ if or .IsHome .Site.Params.paginate_categories }}
+			{{ range first 1 $paginator.Pages }}
+				{{ partial "post-item.html" . }}
+			{{ end }}
+			{{ partial "box/mobile-micro.html" . }}
+			{{ range first 1 (after 1 $paginator.Pages) }}
+				{{ partial "post-item.html" . }}
+			{{ end }}
+			{{ range after 2 $paginator.Pages }}
+				{{ partial "post-item.html" . }}
+			{{ end }}
+
+	{{ else }}
+			{{ range first 1 $paginator.Pages }}
+				{{ partial "post-item.html" . }}
+			{{ end }}
+			{{ partial "box/mobile-callout.html" . }}
+			{{ range (after 1 $paginator.Pages) }}
+				{{ partial "post-item.html" . }}
+			{{ end }}
+	{{ end }}
+
+	</div>
+
+	<div class="sidebar">
+		{{ partial "box/advert.html" . }}
+		{{ partial "box/coffee.html" . }}
+		{{ partial "box/micropost.html" . }}
+		{{ partial "box/reading.html" . }}
+		{{ partial "box/categories.html" . }}
+		
+	</div>
+</div>
+
+
+{{ if .IsHome }}
+	{{ if .Site.Params.paginate_home }}
+		{{ partial "pagination" . }}
+	{{ end }}
+{{ else if .Site.Params.paginate_categories }}
+	{{ partial "pagination" . }}
+{{ end }}
+
+{{ end }}

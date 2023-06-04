@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+<div class="posts-wrapper">
+  <article class="h-entry post">
+    <header>
+    {{ with .Title }}
+      <h1 class="p-name">{{ . }}</h1>
+      {{ end }}
+      <h2 class="headline">
+        <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">
+          <a class="u-url dates" href="{{ .Permalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
+        </time>
+      </h2>
+    </header>
+    <section class="e-content post-body">
+        {{ .Content }}
+    </section>
+
+      {{ partial "box/advert.html" . }}
+
+{{ partial "comments.html" . }}
+
+	{{ partial "box/mobile-reccomended.html" . }}
+
+  </article>
+
+  <div class="sidebar" style="margin-top:50px">
+    {{ partial "box/recomend.html" . }}
+	{{ partial "box/categories.html" . }}
+
+  </div>
+</div>
+{{ end }}
+
+
+
